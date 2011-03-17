@@ -4,10 +4,8 @@
 /* Page */ 
 html { 
   font-size: 100%; /* Évite un bug d'IE 6-7. (1) */ 
-  height:100%;
 } 
 body { 
-  height:100%;
   margin: 0; 
   padding: 0;
   font-family: Georgia, Helvetica, FreeSans, sans-serif; 
@@ -94,7 +92,7 @@ input, button, select {
 #wrapper {
 	margin:auto;
 	background:white;
-	height:100%;
+	height:700px;
 	width:960px;
 	padding:5px;
 }
@@ -113,4 +111,14 @@ input, button, select {
 	background: url('../images/footer.png'); 
 	width: 100%;
 	height: 140px;
+}
+
+#footer p {
+	text-align:center;
+	padding-top:135px;
+	font-size:11px;
+}
+
+#footer p span{
+	font-weight:bold;
 }
