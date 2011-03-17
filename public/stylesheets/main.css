@@ -4,16 +4,17 @@
 /* Page */ 
 html { 
   font-size: 100%; /* Évite un bug d'IE 6-7. (1) */ 
+  height:100%;
 } 
 body { 
+  height:100%;
   margin: 0; 
-  padding: 1em; /* Remettre à zéro si nécessaire. */ 
-  /* Pensez à utiliser une collection de polices (2), par ex: 
-  font-family: Arial, Helvetica, FreeSans, sans-serif; */ 
+  padding: 0;
+  font-family: Georgia, Helvetica, FreeSans, sans-serif; 
   font-size: .8em; /* À adapter pour la police choisie. (3) */ 
   line-height: 1.4; /* À adapter au design. (4) */ 
   color: black; 
-  background: white; 
+  background: url('../images/cloudy-background.png'); 
 } 
  
 /* Titres */ 
@@ -86,4 +87,30 @@ form, fieldset {
 } 
 input, button, select { 
   vertical-align: middle; /* Solution pb. d'alignement. (9) */ 
+}
+
+
+/* Disposition générale  */
+#wrapper {
+	margin:auto;
+	background:white;
+	height:100%;
+	width:960px;
+	padding:5px;
+}
+
+#header {
+	background: url('../images/header-without-code.png');
+	width:100%;
+	height:120px;
+}
+
+#contenu {
+	text-align:center;	
+}
+
+#footer {
+	background: url('../images/footer.png'); 
+	width: 100%;
+	height: 140px;
 }
