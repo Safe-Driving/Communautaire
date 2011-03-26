@@ -1,2 +1,9 @@
 <h2>Page d'accueil temporaire en attendant les articles d'Edgard Debout !</h2>
+
+<% @users.each do |user| %>
+	<p style="font-size:18px; color:red;">
+		<%= user.pseudo %>, <%= user.first_name %> <%= user.last_name %> (<%= user.email %>)
+	</p>
+<% end %>
+
 <p style="margin-bottom: 300px;">Find me in <strong>app/views/pages/home.html.erb</strong></p>
