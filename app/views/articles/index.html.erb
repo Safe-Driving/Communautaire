@@ -1,0 +1,13 @@
+<h2>Affichage des trois derniers articles</h2>
+
+<% @articles.each do |article| %>
+    <h3>
+      <%= article.title %> <span style="font-style:italic;">de :  <%= article.author %> le : <%= article.created_at %></span>
+    </h3>
+
+    <p><%= article.content %></p>
+
+    <hr />
+<% end %>
+
+<p style="margin-bottom: 300px;">Find me in <strong>app/views/articles/index.html.erb</strong></p>
