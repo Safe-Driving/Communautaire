@@ -92,7 +92,6 @@ input, button, select {
 #wrapper {
 	margin:auto;
 	background:white;
-	height:700px;
 	width:960px;
 	padding:5px;
 }
@@ -111,6 +110,7 @@ input, button, select {
 	background: url('../images/footer.png'); 
 	width: 100%;
 	height: 140px;
+    margin-bottom:10px;
 }
 
 #footer p {
