@@ -102,8 +102,25 @@ input, button, select {
 	height:120px;
 }
 
-#contenu {
+#contenu h1{
 	text-align:center;	
+}
+
+#contenu h2{
+	text-align:center;	
+}
+
+#contenu h3{
+	text-align:center;	
+}
+
+#contenu p	{
+	margin-left:5px; 
+}
+
+#contenu p.infopost{
+	text-align:right;
+	font-size: 0.85em;
 }
 
 #footer {

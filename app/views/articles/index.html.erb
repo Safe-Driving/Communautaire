@@ -2,11 +2,12 @@
 
 <% @articles.each do |article| %>
     <h3>
-      <%= article.title %> <span style="font-style:italic;">de :  <%= article.author %> le : <%= article.created_at %></span>
+      <%= article.title %> 
     </h3>
-
     <p><%= article.content %></p>
-
+	
+<p class="infopost"><a href="<%= article.title %>">R&eacute;agir sur le forum</a><br />
+de :  <%= article.author %> le : <%= article.created_at %></p>
     <hr />
 <% end %>
 

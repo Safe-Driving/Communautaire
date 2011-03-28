@@ -6,7 +6,7 @@
 class ArticlesController < ApplicationController
 
   def index
-    @articles = Article.limit(3)
+    @articles = Article.order('created_at DESC').last(3)
   end
 
 end
