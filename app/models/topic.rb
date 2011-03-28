@@ -13,8 +13,8 @@
 
 class Topic < ActiveRecord::Base
 
-  belongs_to :category
-  belongs_to :user
+  belongs_to :category, :foreign_key => "category"
+  belongs_to :user, :foreign_key => "author"
   has_many :posts
 
   validates :title,  	:presence => true
