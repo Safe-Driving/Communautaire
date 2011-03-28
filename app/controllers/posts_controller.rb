@@ -1,8 +1,11 @@
 =begin
+
   Controller pour la gestion des posts
 
   @author : Florian Petit
+  
 =end
+
 class PostsController < ApplicationController
 
   def index
