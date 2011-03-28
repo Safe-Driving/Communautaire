@@ -13,8 +13,8 @@
 
 class Post < ActiveRecord::Base
 
-  belongs_to :user
-  belongs_to :topic
+  belongs_to :user, :foreign_key => "author"
+  belongs_to :topic, :foreign_key => "topic"
 
   validates :content,  	:presence => true
   validates :author,  	:presence => true
