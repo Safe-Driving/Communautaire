@@ -9,7 +9,7 @@
 	<p class="infopost">
 	
 		<%= link_to "Voir l'article complet", article_path(article.id) %><br/>
-		de :  <%= article.author %> le : <%= article.created_at %>
+		de :  <%= article.user.pseudo %> le : <%= article.created_at %>
 	</p>
 	
     <hr />
