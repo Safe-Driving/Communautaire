@@ -1,2 +1,17 @@
-<h1>Topics#index</h1>
-<p>Find me in app/views/topics/index.html.erb</p>
+<h2>Affichage des trois derniers Topics</h2>
+
+<% @topics.each do |topic| %>
+
+    <h3><%= topic.title %></h3>
+    
+    <p><%= topic.category.name %></p>
+	
+	<p class="infopost">
+	
+		<%= link_to "Voir l'article complet", topic_path(topic.id) %><br/>
+		de :  <%= topic.user.pseudo %> le : <%= topic.created_at %>
+	</p>
+	
+    <hr />
+    
+<% end %>
