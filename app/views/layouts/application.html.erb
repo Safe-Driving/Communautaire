@@ -8,24 +8,24 @@
 </head>
 <body>
 <div id="wrapper">
-	<div id="header"></div>
+  <div id="header"></div>
 
-    <div id="contenu">
-		<%= yield %>
-	</div>
-	
-	<div id="footer">
-		<p>
-			© SafeDriving - 
-			<span>Mentions Légales</span> - 
-			<span><%= link_to "Accueil", root_path %></span> - 
-			<span><%= link_to "News", articles_path %></span> - 
-			<span>Auto</span> - 
-			<span>Moto</span> - 
-			<span><%= link_to "Forum", forum_path %></span> -
-			<span>Contact</span>
-		</p>
-	</div>
+  <div id="contenu">
+    <%= yield %>
+  </div>
+
+  <div id="footer">
+    <p>
+      © SafeDriving -
+      <span>Mentions Légales</span> -
+      <span><%= link_to "Accueil", root_path %></span> -
+      <span><%= link_to "News", articles_path %></span> -
+      <span>Auto</span> -
+      <span>Moto</span> -
+      <span><%= link_to "Forum", forum_path %></span> -
+      <span>Contact</span>
+    </p>
+  </div>
 </div>
 </body>
 </html>
