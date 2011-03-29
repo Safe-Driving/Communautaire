@@ -1,0 +1,14 @@
+<h2>Categories</h2>
+
+<% @categories.each do |category| %>
+
+    <h3><%= category.name %></h3>
+	
+	<p class="infopost">
+	
+		<%= link_to "Voir les topic de cette catégorie", category_path(category.id) %><br/>
+	</p>
+	
+    <hr />
+    
+<% end %>

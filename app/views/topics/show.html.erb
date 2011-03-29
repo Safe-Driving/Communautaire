@@ -1,2 +1,16 @@
-<h1>Topics#show</h1>
-<p>Find me in app/views/topics/show.html.erb</p>
+<h2><%= @topic.title %></h2>
+
+<% @posts.each do |post| %>
+
+    <h3><%= post.content %></h3>
+
+
+    <p class="infopost">
+
+		<%= link_to "Voir le post", post_path(post.id) %><br/>
+      de :  <%= post.user.pseudo %> le : <%= post.created_at %>
+
+	</p>
+
+    <hr />
+<% end %>

@@ -4,11 +4,11 @@ class TopicsController < ApplicationController
 
   def index
     @topics = Topic.order('created_at DESC').last(3)
-
   end
 
   def show
     @topic = Topic.find(params[:id])
+    @posts = Post.where(:topic => @topic.id)
 
   end
 

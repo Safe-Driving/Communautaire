@@ -1,0 +1,16 @@
+<h2><%= @category.name %></h2>
+
+<% @topics.each do |topic| %>
+
+    <h3><%= topic.title %></h3>
+
+    <p><%= topic.category.name %></p>
+
+	<p class="infopost">
+
+		<%= link_to "Voir le topic", topic_path(topic.id) %><br/>
+		de :  <%= topic.user.pseudo %> le : <%= topic.created_at %>
+	</p>
+
+    <hr />
+<% end %>
