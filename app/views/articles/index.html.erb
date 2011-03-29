@@ -1,12 +1,17 @@
 <h2>Affichage des trois derniers articles</h2>
 
 <% @articles.each do |article| %>
-    <h3>
-      <%= article.title %> 
-    </h3>
+
+    <h3><%= article.title %></h3>
+    
     <p><%= article.content %></p>
 	
-<p class="infopost"><a href="<%= article.title %>">R&eacute;agir sur le forum</a><br />
-de :  <%= article.author %> le : <%= article.created_at %></p>
+	<p class="infopost">
+	
+		<%= link_to "Voir l'article complet", article_path(article.id) %><br/>
+		de :  <%= article.author %> le : <%= article.created_at %>
+	</p>
+	
     <hr />
+    
 <% end %>
