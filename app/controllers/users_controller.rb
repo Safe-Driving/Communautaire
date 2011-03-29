@@ -7,8 +7,13 @@ class UsersController < ApplicationController
   def create
     @user = User.new(params[:user])
     @user.save
-      @user.inspect
+    @user.inspect
 
+  end
+
+  def show
+    @user = User.find(params[:id])
+    @title = @user.name
   end
 
 end

@@ -10,52 +10,49 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110326180355) do
+ActiveRecord::Schema.define(:version => 20110329221958) do
 
   create_table "articles", :force => true do |t|
-    t.string   "title"
-    t.text     "content"
-    t.integer  "author"
-    t.integer  "category"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.string    "title"
+    t.text      "content"
+    t.integer   "author"
+    t.integer   "category"
+    t.timestamp "created_at"
+    t.timestamp "updated_at"
   end
 
   create_table "categories", :force => true do |t|
-    t.string   "name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.string    "name"
+    t.timestamp "created_at"
+    t.timestamp "updated_at"
   end
 
   create_table "posts", :force => true do |t|
-    t.text     "content"
-    t.integer  "author"
-    t.integer  "topic"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "test", :id => false, :force => true do |t|
-    t.integer "id"
+    t.text      "content"
+    t.integer   "author"
+    t.integer   "topic"
+    t.timestamp "created_at"
+    t.timestamp "updated_at"
   end
 
   create_table "topics", :force => true do |t|
-    t.string   "title"
-    t.integer  "category"
-    t.integer  "author"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.string    "title"
+    t.integer   "category"
+    t.integer   "author"
+    t.timestamp "created_at"
+    t.timestamp "updated_at"
   end
 
   create_table "users", :force => true do |t|
-    t.string   "pseudo"
-    t.string   "first_name"
-    t.string   "last_name"
-    t.string   "email"
-    t.string   "password"
-    t.boolean  "administrator"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.string    "pseudo"
+    t.string    "first_name"
+    t.string    "last_name"
+    t.string    "email"
+    t.string    "password"
+    t.boolean   "administrator"
+    t.timestamp "created_at"
+    t.timestamp "updated_at"
+    t.string    "salt"
   end
 
 end

@@ -7,6 +7,7 @@
   <%= csrf_meta_tag %>
 </head>
 <body>
+<%= debug(params) %>
 <div id="wrapper">
   <div id="header"></div>
 
@@ -23,6 +24,7 @@
       <span>Auto</span> -
       <span>Moto</span> -
       <span><%= link_to "Forum", forum_path %></span> -
+      <span><%= link_to "Inscription", signup_path %></span> -
       <span>Contact</span>
     </p>
   </div>
