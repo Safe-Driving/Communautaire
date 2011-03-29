@@ -11,8 +11,8 @@
 
 class Category < ActiveRecord::Base
 
-  has_many :articles
-  has_many :topics
+  has_many :articles, 	:foreign_key => "category"
+  has_many :topics, 	:foreign_key => 'category'
 
   validates :name,  	:presence => true
 

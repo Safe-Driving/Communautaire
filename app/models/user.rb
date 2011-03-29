@@ -17,9 +17,9 @@
 class User < ActiveRecord::Base
 
 
-  has_many :articles
-  has_many :topics
-  has_many :posts
+  has_many :articles, :foreign_key => "author"
+  has_many :topics,   :foreign_key => "author"
+  has_many :posts,    :foreign_key => "author"
 
   email_regex = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
 

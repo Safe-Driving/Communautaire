@@ -8,7 +8,7 @@ class CategoriesController < ApplicationController
 
   def show
     @category = Category.find(params[:id])
-    @topics = Topic.where(:category => @category.id)
+    @topics = @category.topics
   end
 
   def edit
