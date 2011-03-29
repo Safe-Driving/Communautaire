@@ -16,23 +16,31 @@
 
 class User < ActiveRecord::Base
 
+
   has_many :articles
   has_many :topics
   has_many :posts
 
   email_regex = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
-  
+
   validates :pseudo,  :presence => true,
-                      :length   => { :maximum => 50 }
-                    
+            :length   => { :maximum => 50 }
+
   validates :first_name,  	:presence => true
   validates :last_name,  	:presence => true
   validates :password,  	:presence => true
   validates :administrator, :presence => true
-                    
-  validates :email, :presence => true,
-                    :format   => { :with => email_regex },
-                    :uniqueness => { :case_sensitive => false }
-                    
-end
 
+  validates :email, :presence => true,
+            :format   => { :with => email_regex },
+            :uniqueness => { :case_sensitive => false }
+
+
+  def self.authenticate(email, submitted_password)
+    user = find_by_email(email)
+    return user
+  end
+
+
+
+end
