@@ -6,4 +6,6 @@ Communautaire::Application.routes.draw do
 
   root :to => 'pages#home'
 
+  match 'posts/index', :to => 'posts#index'
+
 end
