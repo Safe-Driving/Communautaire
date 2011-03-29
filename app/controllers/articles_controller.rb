@@ -9,11 +9,11 @@
 class ArticlesController < ApplicationController
 
   def index
-    @articles = Article.order('created_at DESC').last(3)
+    @articles = Article.order('created_at DESC').limit(3) 
   end
   
   def show
-    @article = Article.find(params[:id])
+    @article = Article.find(params[:id], :include => :user)
   end
 
 end

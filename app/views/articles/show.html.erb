@@ -4,5 +4,5 @@
 	
 <p class="infopost">
 	<a href="<%= @article.title %>">R&eacute;agir sur le forum</a><br />
-	de :  <%= @article.author %> le : <%= @article.created_at %>
+	de :  <%= @article.user.first_name %> le : <%= @article.created_at %> | <%= @article.category.name %>
 </p>
