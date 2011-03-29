@@ -161,3 +161,10 @@ input, button, select {
 #footer p span{
 	font-weight:bold;
 }
+
+
+/* Forms  */
+
+div.field, div.actions {
+  margin-bottom: 10px;
+}
