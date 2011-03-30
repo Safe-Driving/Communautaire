@@ -1,2 +1,10 @@
-<h1>Posts#show</h1>
-<p>Find me in app/views/posts/show.html.erb</p>
+    <h3><%= @post.content %></h3>
+
+
+    <p class="infopost">
+
+      de :  <%= @post.user.pseudo %> le : <%= @post.created_at %>
+
+	</p>
+
+    <hr />

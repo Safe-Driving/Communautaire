@@ -1,2 +1,17 @@
-<h1>Posts#index</h1>
-<p>Find me in app/views/posts/index.html.erb</p>
+<h2>Affichage des trois derniers Posts</h2>
+
+<% @posts.each do |post| %>
+
+    <h3><%= post.content %></h3>
+    
+    <p><%= post.topic.title %></p>
+	
+	<p class="infopost">
+	
+		<%= link_to "Voir le post complet", post_path(post.id) %><br/>
+		de :  <%= post.user.pseudo %> le : <%= post.created_at %>
+	</p>
+	
+    <hr />
+    
+<% end %>
