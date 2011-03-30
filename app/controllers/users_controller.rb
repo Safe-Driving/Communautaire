@@ -13,8 +13,6 @@ class UsersController < ApplicationController
       Time.now.inspect
 
     end
-    @user.inspect
-
   end
 
   def show
