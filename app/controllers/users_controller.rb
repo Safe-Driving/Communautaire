@@ -7,7 +7,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(params[:user])
     if @user.save
-      redirect_to @user
+      redirect_to "http://safe-driving.eu"
     else
       @user.inspect
       Time.now.inspect
