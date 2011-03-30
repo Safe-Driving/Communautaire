@@ -11,7 +11,6 @@ class UsersController < ApplicationController
     else
       @user.inspect
       Time.now.inspect
-
     end
   end
 
