@@ -7,10 +7,11 @@ class UsersController < ApplicationController
   def create
     @user = User.new(params[:user])
     if @user.save
-      # Handle a successful save.
+      redirect_to "http://google.fr"
     else
-      @title = "Sign up"
-      render 'new'
+      @user.inspect
+      Time.now.inspect
+
     end
     @user.inspect
 
@@ -22,3 +23,5 @@ class UsersController < ApplicationController
   end
 
 end
+
+# TODO : Trouver pourquoi created_at, updated_at ne fonctionnent pas, ajouter des messages de validation (password trop court etc)
