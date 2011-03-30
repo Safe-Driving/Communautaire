@@ -28,7 +28,7 @@ class User < ActiveRecord::Base
 
   validates :first_name,  	:presence => true
   validates :last_name,  	:presence => true
-  validates :administrator, :presence => true
+  validates :administrator, :presence => false
 
   validates :email, :presence => true,
             :format   => { :with => email_regex },
