@@ -76,9 +76,6 @@ GEM
     warden (1.0.3)
       rack (>= 1.0.0)
 
-PLATFORMS
-  x86-mingw32
-
 DEPENDENCIES
   annotate-models (= 1.0.4)
   devise
