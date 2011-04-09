@@ -15,6 +15,13 @@
 #
 require "digest"
 class User < ActiveRecord::Base
+  # Include default devise modules. Others available are:
+  # :token_authenticatable, :encryptable, :confirmable, :lockable, :timeoutable and :omniauthable
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :trackable, :validatable
+
+  # Setup accessible (or protected) attributes for your model
+  attr_accessible :email, :password, :password_confirmation, :remember_me
 
 
   has_many :articles, :foreign_key => "author"
@@ -23,51 +30,7 @@ class User < ActiveRecord::Base
 
   email_regex = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
 
-  validates :pseudo,  :presence => true,
-            :length   => { :maximum => 50 }
-
-  validates :first_name,  	:presence => true
-  validates :last_name,  	:presence => true
 
 
-  validates :email, :presence => true,
-            :format   => { :with => email_regex },
-            :uniqueness => { :case_sensitive => false }
-
-  validates :password, :presence     => true,
-            :confirmation => true,
-            :length       => { :within => 6..40 }
-
-  before_save :encrypt_password
-
-
-    def has_password?(submitted_password)
-      password == encrypt(submitted_password)
-    end
-
-    private
-
-    def encrypt_password
-      self.salt = make_salt if new_record?
-      self.password = encrypt(password)
-    end
-
-    def encrypt(string)
-      secure_hash("{salt}--{string}")
-    end
-
-    def make_salt
-      secure_hash("{Time.now.utc}--{password}")
-    end
-
-    def secure_hash(string)
-      Digest::SHA2.hexdigest(string)
-    end
-
-    def self.authenticate(email, submitted_password)
-      user = find_by_email(email)
-      return nil  if user.nil?
-      return user if user.has_password?(submitted_password)
-    end
 
 end

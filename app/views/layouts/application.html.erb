@@ -9,9 +9,21 @@
 <body>
 <%= debug(params) %>
 <div id="wrapper">
-  <div id="header"></div>
+  <div id="header">
+    <div id="user_nav" style="float:right;">
+      <% if user_signed_in? %>
+          Connecté sur <%= current_user.email %>. Ce n'est pas vous ?
+          <%= link_to "Se déconnecter", destroy_user_session_path %>
+      <% else %>
+          <%= link_to "S'inscrire", new_user_registration_path %> ou <%= link_to "se connecter", new_user_session_path %>
+      <% end %>
+    </div>
+  </div>
 
   <div id="contenu">
+    <% flash.each do |key, value| %>
+        <div class="flash <%= key %>"><%= value %></div>
+    <% end %>
     <%= yield %>
   </div>
 
@@ -24,7 +36,7 @@
       <span>Auto</span> -
       <span>Moto</span> -
       <span><%= link_to "Forum", forum_path %></span> -
-      <span><%= link_to "Inscription", signup_path %></span> -
+      <span></span> -
       <span>Contact</span>
     </p>
   </div>
