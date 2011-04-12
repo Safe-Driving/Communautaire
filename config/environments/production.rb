@@ -59,7 +59,7 @@ Communautaire::Application.configure do
       :port => 587,
       :domain => "safe-driving.eu",
       :authentication => :plain,
-      :user_name => "ploufrom@gmail.com",
-      :password => "jj5w6rrom"
+      :user_name => "edebout.safedriving@gmail.com",
+      :password => "edgarddebout"
   }
 end
