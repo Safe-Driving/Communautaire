@@ -1,0 +1,23 @@
+<h2>Edition d'un article du site</h2>
+
+
+
+<%= form_for(@article) do |f| %>
+    
+    <div class="field">
+      <%= f.label :titre %>      <%= f.text_field :title %>
+    </div>
+    
+    <div class="field">
+      <%= f.label :content %><br />
+      <%= f.text_field :content %>
+    </div>
+    <div class="field">
+      <%= f.label :categorie %><br />
+      <%= f.text_field :category %>
+    </div>
+    
+    <div class="actions">
+      <%= f.submit "Edit" %>
+    </div>
+<% end %>
