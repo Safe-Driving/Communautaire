@@ -38,5 +38,10 @@ module Communautaire
 
     # Configure sensitive parameters which will be filtered from the log file.
     config.filter_parameters += [:password]
+
+    config.to_prepare do
+      Devise::Mailer.layout "email" # email.erb
+    end
+
   end
 end
