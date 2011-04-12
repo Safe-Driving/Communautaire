@@ -215,13 +215,12 @@ div.field, div.actions {
 
 .notice
 {
-
-    text-align:center;
+    text-align: center;
     padding: 5px;
-    margin-bottom:10px;
-    background: #FFF6BF;
+    margin-bottom: 10px;
+    background: #fff6bf;
     border-top: 2px solid #FFD324;
-    border-bottom: 2px solid #FFD324;
+    border-bottom: 2px solid #ffd324;
 }
 
 .alert
