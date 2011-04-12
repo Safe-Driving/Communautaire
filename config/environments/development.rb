@@ -23,6 +23,8 @@ Communautaire::Application.configure do
   # Only use best-standards-support built into browsers
   config.action_dispatch.best_standards_support = :builtin
 
+  config.action_mailer.default_url_options = { :host => 'http://safe-driving.eu' }
+
   ActionMailer::Base.raise_delivery_errors = true
   ActionMailer::Base.perform_deliveries = true
   ActionMailer::Base.delivery_method = :smtp
