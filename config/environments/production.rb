@@ -46,4 +46,20 @@ Communautaire::Application.configure do
 
   # Send deprecation notices to registered listeners
   config.active_support.deprecation = :notify
+
+
+  config.action_mailer.default_url_options = { :host => 'http://safe-driving.eu' }
+
+  ActionMailer::Base.raise_delivery_errors = true
+  ActionMailer::Base.perform_deliveries = true
+  ActionMailer::Base.delivery_method = :smtp
+  ActionMailer::Base.smtp_settings = {
+      :tls => true,
+      :address => "smtp.gmail.com",
+      :port => 587,
+      :domain => "safe-driving.eu",
+      :authentication => :plain,
+      :user_name => "ploufrom@gmail.com",
+      :password => "jj5w6rrom"
+  }
 end
