@@ -48,7 +48,7 @@ Communautaire::Application.configure do
   config.active_support.deprecation = :notify
 
 
-  config.action_mailer.default_url_options = { :host => 'http://safe-driving.eu' }
+  config.action_mailer.default_url_options = { :host => 'safe-driving.eu' }
 
   ActionMailer::Base.raise_delivery_errors = true
   ActionMailer::Base.perform_deliveries = true
