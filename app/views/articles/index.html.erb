@@ -10,7 +10,7 @@
 	
 		<%= link_to "Voir l'article complet", article_path(article.id) %><br/>
 		
-		de :  <%= article.user.id %> le : <%= article.created_at %>
+		de :  <%= article.user.last_name %> le : <%= article.created_at %>
 	</p>
 	
     <hr />

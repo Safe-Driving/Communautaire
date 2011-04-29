@@ -1,21 +1,25 @@
 <h2>Ajout d'article sur le site</h2>
 
 <%= form_for(@article) do |f| %>
-    
+
     <div class="field">
       <%= f.label :titre %>      <%= f.text_field :title %>
     </div>
-    
+
     <div class="field">
-      <%= f.label :content %><br />
+      <%= f.label :content %>
       <%= f.text_field :content %>
     </div>
     <div class="field">
-      <%= f.label :categorie %><br />
-      <%= f.text_field :category %>
+
+       <%= f.label :categorie %>
+    <%= select("category", 'id', Category.all.collect { |c| [ c.name, c.id ] }, { :include_blank => true }) %>
+
     </div>
-    
+
+
+
     <div class="actions">
-      <%= f.submit "Sign up" %>
+      <%= f.submit "Add Article" %>
     </div>
 <% end %>

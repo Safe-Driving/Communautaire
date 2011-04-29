@@ -12,9 +12,11 @@
       <%= f.label :content %><br />
       <%= f.text_field :content %>
     </div>
-    <div class="field">
-      <%= f.label :categorie %><br />
-      <%= f.text_field :category %>
+     <div class="field">
+
+       <%= f.label :categorie %>
+    <%= select("category", 'id', Category.all.collect { |c| [ c.name, c.id ] }, { :include_blank => true }) %>
+
     </div>
     
     <div class="actions">
