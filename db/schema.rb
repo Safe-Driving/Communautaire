@@ -10,37 +10,60 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 0) do
+ActiveRecord::Schema.define(:version => 20110429191403) do
 
   create_table "articles", :force => true do |t|
-    t.string    "title"
-    t.text      "content"
-    t.integer   "author"
-    t.integer   "category"
-    t.timestamp "created_at"
-    t.timestamp "updated_at"
+    t.string   "title"
+    t.text     "content"
+    t.integer  "author"
+    t.integer  "category"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "categories", :force => true do |t|
-    t.string    "name"
-    t.timestamp "created_at"
-    t.timestamp "updated_at"
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "posts", :force => true do |t|
-    t.text      "content"
-    t.integer   "author"
-    t.integer   "topic"
-    t.timestamp "created_at"
-    t.timestamp "updated_at"
+    t.text     "content"
+    t.integer  "author"
+    t.integer  "topic"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "topics", :force => true do |t|
-    t.string    "title"
-    t.integer   "category"
-    t.integer   "author"
-    t.timestamp "created_at"
-    t.timestamp "updated_at"
+    t.string   "title"
+    t.integer  "category"
+    t.integer  "author"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.text     "content"
+    t.string   "description"
   end
+
+  create_table "users", :force => true do |t|
+    t.string   "pseudo"
+    t.string   "first_name"
+    t.string   "last_name"
+    t.boolean  "administrator"
+    t.string   "email",                               :default => "", :null => false
+    t.string   "encrypted_password",   :limit => 128, :default => "", :null => false
+    t.string   "reset_password_token"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",                       :default => 0
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string   "current_sign_in_ip"
+    t.string   "last_sign_in_ip"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "users", ["email"], :name => "index_users_on_email", :unique => true
+  add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
 
 end

@@ -9,6 +9,8 @@
 #  author     :integer
 #  created_at :datetime
 #  updated_at :datetime
+#  content    :text
+#  description :string(255)
 #
 
 class Topic < ActiveRecord::Base
@@ -17,8 +19,10 @@ class Topic < ActiveRecord::Base
   belongs_to :category, :foreign_key => "category"
   has_many :posts,		:foreign_key => "topic"
 
-  validates :title,  	:presence => true
-  validates :category,  :presence => true
-  validates :author,  	:presence => true
+  validates :title,  	    :presence => true
+  validates :category,    :presence => true
+  validates :author,  	  :presence => true
+  validates :content,     :presence => true
+  validates :description, :presence => true
 
 end
