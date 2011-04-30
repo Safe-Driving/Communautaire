@@ -26,7 +26,31 @@ def create
     @category = Category.find(params[:category_id])
   end
 
-  def edit
-  end
+  def update
+     @category = Category.find(params[:category_id])
+     @topic = Topic.find(params[:id])
+     @title = params[:topic][:title]
+     @content = params[:topic][:content]
+     @description = params[:topic][:description]
+
+     @topic.title = @title
+     @topic.content = @content
+     @topic.description = @description
+
+
+     if @topic.save
+       redirect_to  category_topic_path(@category.id,@topic.id)
+      flash[:notice] = 'Topic was successfully updated.'
+     else
+       flash[:error] = 'Topic was not updated.'
+       redirect_to :edit
+     end
+    end
+
+    def edit
+      @category = Category.find(params[:category_id])
+      @topic = Topic.find(params[:id])
+    end
+
 
 end

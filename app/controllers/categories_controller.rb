@@ -30,7 +30,25 @@ class CategoriesController < ApplicationController
 
   end
 
+  def update
+   @category = Category.find(params[:id])
+   @name = params[:category][:name]
+   @category.name = @name
+
+
+   if @category.save
+    redirect_to  categories_path
+    flash[:notice] = 'Article was successfully updated.'
+   else
+     flash[:error] = 'Article was not updated.'
+     redirect_to :edit
+   end
+  end
+
   def edit
+
+    @category = Category.find(params[:id])
+
   end
 
 end

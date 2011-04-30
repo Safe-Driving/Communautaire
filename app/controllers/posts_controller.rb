@@ -23,7 +23,27 @@ end
   def show
   end
 
-  def edit
+  def update
+       @topic = Topic.find(params[:topic_id])
+       @post = Post.find(params[:id])
+       @content = params[:post][:content]
+
+       @post.content = @content
+       @category = Category.find(@topic.category.id)
+
+       if @post.save
+         redirect_to  category_topic_path(@category.id,@topic.id)
+        flash[:notice] = 'Post was successfully updated.'
+       else
+         flash[:error] = 'Post was not updated.'
+         redirect_to :edit
+       end
   end
+
+  def edit
+      @topic = Topic.find(params[:topic_id])
+      @post = Post.find(params[:id])
+  end
+
 
 end

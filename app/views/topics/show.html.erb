@@ -4,6 +4,7 @@
 <p><%= @topic.content %></p>
 
 <br/> <%= link_to "Répondre à ce topic", new_topic_post_path(@topic.id) %><br/>
+<%= link_to "Editer ce topic", edit_category_topic_path(@category.id,@topic.id) %><br/>
 
 
 <% @posts.each do |post| %>
@@ -14,7 +15,7 @@
     <p class="infopost">
 
       de :  <%= post.user.pseudo %> le : <%= post.created_at %>
-
+      <%= link_to "Modifier le post", edit_topic_post_path(@topic.id,post.id) %><br/>
 	</p>
 
     <hr />
