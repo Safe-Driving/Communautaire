@@ -6,4 +6,5 @@
 	<a href="">R&eacute;agir sur le forum</a><br />
 	<a href="/categories/<%= @article.category.id %>"><%= @article.category.name %></a>
 	de :  <%= @article.user.last_name %> le : <%= @article.created_at %>
+  <a href="<%=@article.id %>/edit"><%= @editarticle %></a>
 </p>
