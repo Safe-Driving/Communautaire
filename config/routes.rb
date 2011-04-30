@@ -4,9 +4,23 @@ Communautaire::Application.routes.draw do
 
   resources :users
   resources :articles
-  resources :topics
-  resources :categories
-  resources :posts
+  scope "forum" do
+    resources :categories do
+      resources :topics
+    end
+    scope "categories" do
+      resources :topics do
+        resources :posts
+      end
+      #scope "topics" do
+      #  resources :posts
+      #end
+    end
+  end
+
+
+
+
 
   match '/home',    :to => 'pages#home'
   match '/forum', :to => 'categories#index'
@@ -15,6 +29,5 @@ Communautaire::Application.routes.draw do
 
   root :to => 'pages#home'
   get "pages/home"
-
 
 end

@@ -1,5 +1,9 @@
 <h2><%= @category.name %></h2>
 
+<%= link_to "Créer un topic dans cette catégorie", new_category_topic_path(@category.id) %><br/>
+
+
+
 <% @topics.each do |topic| %>
 
     <h3><%= topic.title %></h3>
@@ -8,7 +12,7 @@
 
 	<p class="infopost">
 
-		<%= link_to "Voir le topic", topic_path(topic.id) %><br/>
+		<%= link_to "Voir le topic", category_topic_path(@category.id,topic.id) %><br/>
 		de :  <%= topic.user.pseudo %> le : <%= topic.created_at %>
 	</p>
 

@@ -1,6 +1,10 @@
 <h2><%= @topic.title %></h2>
+<p>Par <%= @topic.user.pseudo %></p>
 <p><%= @topic.description %></p>
 <p><%= @topic.content %></p>
+
+<br/> <%= link_to "Répondre à ce topic", new_topic_post_path(@topic.id) %><br/>
+
 
 <% @posts.each do |post| %>
 
@@ -9,7 +13,6 @@
 
     <p class="infopost">
 
-		<%= link_to "Voir le post", post_path(post.id) %><br/>
       de :  <%= post.user.pseudo %> le : <%= post.created_at %>
 
 	</p>

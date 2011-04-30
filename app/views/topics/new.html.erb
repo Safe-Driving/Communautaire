@@ -1,5 +1,5 @@
 <h1>Topics#new</h1>
-<%= form_for(@topic) do |f| %>
+<%= form_for([@category, @topic]) do |f| %>
     <div class="field">
       <%= f.label :title %><br />
       <%= f.text_field :title %>
@@ -13,6 +13,6 @@
       <%= f.text_field :description %>
     </div>
     <div class="actions">
-      <%= f.submit "Sign up" %>
+      <%= f.submit "Create topic" %>
     </div>
 <% end %>

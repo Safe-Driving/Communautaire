@@ -1,2 +1,10 @@
-<h1>Posts#new</h1>
-<p>Find me in app/views/posts/new.html.erb</p>
+<h1>Topics#new</h1>
+<%= form_for([@category, @topic, @post]) do |f| %>
+    <div class="field">
+      <%= f.label :content %><br />
+      <%= f.text_field :content %>
+    </div>
+    <div class="actions">
+      <%= f.submit "Post" %>
+    </div>
+<% end %>
