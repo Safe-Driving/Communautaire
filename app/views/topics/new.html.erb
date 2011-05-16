@@ -1,18 +1,16 @@
-<h1>Topics#new</h1>
-<%= form_for([@category, @topic]) do |f| %>
-    <div class="field">
-      <%= f.label :title %><br />
-      <%= f.text_field :title %>
-    </div>
-    <div class="field">
-      <%= f.label :content %><br />
-      <%= f.text_field :content %>
-    </div>
-    <div class="field">
-      <%= f.label :description %><br />
-      <%= f.text_field :description %>
-    </div>
-    <div class="actions">
-      <%= f.submit "Create topic" %>
-    </div>
-<% end %>
+<div id="center_it">
+  <h1>Nouveau Topic</h1>
+  <%= semantic_form_for([@category, @topic]) do |f| %>
+
+      <% f.inputs do %>
+          <%= f.input :title %>
+          <%= f.input :content %>
+          <%= f.input :description, :as => :text %>
+      <% end %>
+
+      <% f.buttons do %>
+          <%= f.commit_button %>
+      <% end %>
+
+  <% end %>
+</div>

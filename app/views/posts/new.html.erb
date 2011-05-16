@@ -1,10 +1,14 @@
-<h1>Topics#new</h1>
-<%= form_for([@category, @topic, @post]) do |f| %>
-    <div class="field">
-      <%= f.label :content %><br />
-      <%= f.text_field :content %>
-    </div>
-    <div class="actions">
-      <%= f.submit "Post" %>
-    </div>
-<% end %>
+<div id="center_it">
+  <h1>Répondre</h1>
+  <%= semantic_form_for([@category, @topic, @post]) do |f| %>
+
+      <% f.inputs do %>
+          <%= f.input :content %>
+      <% end %>
+
+      <% f.buttons do %>
+          <%= f.commit_button %>
+      <% end %>
+
+  <% end %>
+</div>

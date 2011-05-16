@@ -233,3 +233,18 @@ div.field, div.actions {
     border-top: 2px solid #ff0000;
     border-bottom: 2px solid #ff0000;
 }
+
+#center_it
+{
+    width: 60%;
+    margin: auto;
+}
+
+h1
+{
+    font-size: 18px;
+    color: #455560;
+    border-bottom: 2px solid #D4E6F0;
+    padding:5px;
+    margin-bottom: 15px;
+}
