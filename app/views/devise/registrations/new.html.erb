@@ -1,7 +1,7 @@
 <div id="center_it">
 <h1>Sign up</h1>
 
-<%= semantic_form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+<%= semantic_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :multipart => true })  do |f| %>
     <%= devise_error_messages! %>
 
 
@@ -11,6 +11,7 @@
       <%= f.input :email %>
       <%= f.input :password %>
       <%= f.input :password_confirmation, :as => :password %>
+      <%= f.input :avatar, :as => :file %>
     <% end %>
 
     <% f.buttons do %>
