@@ -20,6 +20,12 @@
           <%= link_to "S'inscrire", new_user_registration_path %> ou <%= link_to "se connecter", new_user_session_path %>
       <% end %>
     </div>
+    <div id="navigation">
+      <div id="logo"><a href="<%= url_for root_url %>"></a></div>
+      <div id="auto" class="menu"><a href="<%= url_for auto_path %>"></a></div>
+      <div id="moto" class="menu"><a href="<%= url_for moto_path %>"></a></div>
+      <div id="forum" class="menu"><a href="<%= url_for categories_path %>"></a></div>
+    </div>
   </div>
 
   <div id="contenu">
@@ -35,8 +41,8 @@
       <span>Mentions Légales</span> -
       <span><%= link_to "Accueil", root_path %></span> -
       <span><%= link_to "News", articles_path %></span> -
-      <span>Auto</span> -
-      <span>Moto</span> -
+      <span><%= link_to "Auto", auto_path %></span> -
+      <span><%= link_to "Moto", moto_path %></span> -
       <span><%= link_to "Forum", categories_path %></span> -
       <span></span> -
       <span>Contact</span>

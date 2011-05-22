@@ -117,11 +117,66 @@ input, button, select {
 }
 
 #header {
-    background: url('../images/header-without-code.png');
     width:100%;
     height:120px;
     margin-bottom: 25px;
 }
+
+#navigation
+{
+    height:68px;
+    margin-top:30px;
+    margin-left:50px;
+}
+
+#navigation div.menu
+{
+    height:68px;
+    width:67px;
+    float:left;
+    margin-left:5px;
+}
+
+#navigation div.menu a
+{
+    height:68px;
+    width:67px;
+    display:block;
+}
+
+#navigation #auto {
+    background: url('../images/auto.png');
+}
+
+#navigation #moto {
+    background: url('../images/moto.png');
+}
+
+#navigation #forum {
+    background: url('../images/forum.png');
+}
+
+
+#navigation div#logo
+{
+    height:68px;
+    width:134px;
+    float: left;
+    background: url('../images/logo.png');
+}
+
+#navigation div#logo a
+{
+    height:68px;
+    width:134px;
+    display: block;
+}
+
+#user_nav {
+    float:right;
+    margin-top:-30px;
+}
+
 
 #contenu h1{
     text-align:center;
@@ -140,7 +195,6 @@ input, button, select {
 }
 
 #contenu p.infopost{
-    text-align:right;
     font-size: 0.85em;
 }
 
@@ -247,4 +301,41 @@ h1
     border-bottom: 2px solid #D4E6F0;
     padding:5px;
     margin-bottom: 15px;
+}
+
+
+/************** Tableau ****************/
+
+table.forum_table {
+    width:85%;
+    margin:auto;
+    border-collapse: collapse;
+}
+
+.forum_table th {
+    background: #424242;
+    color: white;
+    font-size: 12px;
+    padding: 2px;
+}
+
+.forum_table td {
+    border: 1px solid #e4e4e4;
+}
+
+
+.forum_table .forum_user {
+    background: #f1f2f1;
+}
+
+.forum_table .forum_info {
+    background: #f1f2f1;
+}
+
+.forum_table td:hover {
+    background: #f1f2f1;
+}
+
+.forum_table .forum_name {
+    width: 70%;
 }

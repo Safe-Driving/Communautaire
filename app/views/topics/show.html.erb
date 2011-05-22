@@ -1,22 +1,40 @@
-<h2><%= @topic.title %></h2>
-<p>Par <%= @topic.user.pseudo %></p>
-<p><%= @topic.description %></p>
-<p><%= @topic.content %></p>
+<table class="forum_table">
+
+
+  <tr>
+    <th>User</th>
+    <th><%= @topic.title %></th>
+  </tr>
+
+
+  <tr class="forum_post_list">
+    <td class="forum_user">
+      <p><%= @topic.user.first_name + " " + @topic.user.last_name %></p>
+    </td>
+
+    <td class="forum_post">
+      <p><%= @topic.content %></p>
+    </td>
+  </tr>
+
+
+
+
+
+  <% @posts.each do |post| %>
+      <tr class="forum_post_list">
+        <td class="forum_user">
+          <p><%= post.user.first_name + " " + post.user.last_name %></p>
+        </td>
+
+        <td class="forum_post">
+          <p><%= post.created_at %></p>
+          <p><%= post.content %></p>
+        </td>
+      </tr>
+  <% end %>
+
+</table>
 
 <br/> <%= link_to "Répondre à ce topic", new_topic_post_path(@topic.id) %><br/>
 <%= link_to "Editer ce topic", edit_category_topic_path(@category.id,@topic.id) %><br/>
-
-
-<% @posts.each do |post| %>
-
-    <h3><%= post.content %></h3>
-
-
-    <p class="infopost">
-
-      de :  <%= post.user.pseudo %> le : <%= post.created_at %>
-      <%= link_to "Modifier le post", edit_topic_post_path(@topic.id,post.id) %><br/>
-	</p>
-
-    <hr />
-<% end %>

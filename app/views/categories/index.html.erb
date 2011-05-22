@@ -1,14 +1,25 @@
-<h1>Categories</h1>
+<table class="forum_table">
 
-<% @categories.each do |category| %>
 
-    <h3><%= category.name %></h3>
-	
-	<p class="infopost">
-	
-		<%= link_to "Voir les topic de cette catégorie", category_path(category.id) %><br/>
-	</p>
-	
-    <hr />
-    
-<% end %>
+  <tr>
+    <th>Catégories</th>
+    <th>Derniers Posts</th>
+  </tr>
+
+
+  <% @categories.each do |category| %>
+      <tr onclick="location.href='<%= url_for category_path(category.id) %>'" class="forum_list">
+        <td class="forum_name">
+          <p><a href="<%= url_for category_path(category.id) %>"><%= category.name %></a></p>
+          <p class="infopost">Informations informations informations information</p>
+        </td>
+
+        <td class="forum_info">
+          <p class="infopost"><%= link_to category.topics.last.title, category_topic_path(category.id,category.topics.last.id) %></p>
+          <p class="infopost">Le <%= category.topics.last.created_at.strftime("%d/%m/%y")%> à <%= category.topics.last.created_at.strftime("%H:%M") %> par : <br /> Romain Delhoute</p>
+        </td>
+
+      </tr>
+  <% end %>
+
+</table>

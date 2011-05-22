@@ -5,13 +5,13 @@
     <h3><%= topic.title %></h3>
     <p><%= topic.description %></p>
     <p><%= topic.category.name %></p>
-	
+
 	<p class="infopost">
-	
+
 		<%= link_to "Voir l'article complet", topic_path(topic.id) %><br/>
 		de :  <%= topic.user.pseudo %> le : <%= topic.created_at %>
 	</p>
-	
+
     <hr />
-    
+
 <% end %>

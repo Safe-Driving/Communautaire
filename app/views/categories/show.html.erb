@@ -1,20 +1,25 @@
-<h2><%= @category.name %></h2>
-
-<%= link_to "Créer un topic dans cette catégorie", new_category_topic_path(@category.id) %><br/>
+<table class="forum_table">
 
 
+  <tr>
+    <th>Topics</th>
+    <th>Derniers Posts</th>
+  </tr>
 
-<% @topics.each do |topic| %>
 
-    <h3><%= topic.title %></h3>
-    <p><%= topic.description %></p>
-    <p><%= topic.category.name %></p>
+  <% @topics.each do |topic| %>
+      <tr onclick="location.href='<%= url_for topic_path(topic.id) %>'" class="forum_list">
+        <td class="forum_name">
+          <p><a href="<%= url_for category_topic_path(topic.category.id,topic.id) %>"><%= topic.title %></a></p>
+          <p class="infopost">Informations informations informations information</p>
+        </td>
 
-	<p class="infopost">
+        <td class="forum_info">
+          <p class="infopost"><%= link_to topic.title, topic_path(topic.id) %></p>
+          <p>Le <%= topic.created_at.strftime("%d/%m/%y")%> à <%= topic.created_at.strftime("%H:%M") %> par : <br /> <%= topic.user.first_name + " " + topic.user.last_name %></p>
+        </td>
 
-		<%= link_to "Voir le topic", category_topic_path(@category.id,topic.id) %><br/>
-		de :  <%= topic.user.pseudo %> le : <%= topic.created_at %>
-	</p>
+      </tr>
+  <% end %>
 
-    <hr />
-<% end %>
+</table>

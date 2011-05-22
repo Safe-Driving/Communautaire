@@ -1,5 +1,9 @@
 Communautaire::Application.routes.draw do
 
+  get "content/auto"
+
+  get "content/moto"
+
   devise_for :users
 
   resources :users
@@ -26,8 +30,10 @@ Communautaire::Application.routes.draw do
   match '/forum', :to => 'categories#index'
   match '/categories', :to => 'categories#index'
   match '/posts', :to => 'posts#index'
+  match '/content/auto', :to => 'content#auto', :as => 'auto'
+  match '/content/moto', :to => 'content#moto', :as => 'moto'
+
 
   root :to => 'pages#home'
-  get "pages/home"
 
 end
