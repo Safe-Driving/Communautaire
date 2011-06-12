@@ -41,6 +41,7 @@ module Communautaire
 
     config.to_prepare do
       Devise::Mailer.layout "email" # email.erb
+      Mailer.layout "email" # email.erb
     end
 
   end

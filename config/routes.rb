@@ -32,7 +32,8 @@ Communautaire::Application.routes.draw do
   match '/posts', :to => 'posts#index'
   match '/content/auto', :to => 'content#auto', :as => 'auto'
   match '/content/moto', :to => 'content#moto', :as => 'moto'
-
+  match '/content/contact', :to => 'content#contact', :as => 'contact'
+  match '/content/send_mail', :to => 'content#send_mail'
 
   root :to => 'pages#home'
 
