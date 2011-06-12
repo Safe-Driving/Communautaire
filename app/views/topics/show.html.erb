@@ -36,5 +36,6 @@
 
 </table>
 
-<br/> <%= link_to "Répondre à ce topic", new_topic_post_path(@topic.id) %><br/>
-<%= link_to "Editer ce topic", edit_category_topic_path(@category.id,@topic.id) %><br/>
+
+<p class="actionize"><%= link_to "Répondre à ce topic", new_topic_post_path(@topic.id) %></p>
+<p class="actionize"><%= link_to "Editer ce topic", edit_category_topic_path(@category.id,@topic.id) %></p>

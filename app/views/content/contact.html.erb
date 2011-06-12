@@ -1,11 +1,12 @@
-<% form_for :email, :url => { :controller => 'content', :action => 'send_mail' } do |f| %>
-    <%= f.label :name %><br />
-    <%= f.text_field :name, :size => 60 %><br />
-    <%= f.label :address %><br />
-    <%= f.text_field :address, :size => 60 %><br />
-    <%= f.label :subject %><br />
-    <%= f.text_field :subject, :size => 60 %><br />
-    <%= f.label :body %><br />
-    <%= f.text_area :body, :rols => 10, :cols => 60 %><br />
-    <%= submit_tag "Send Email "%>
+<div id="center_it">
+<h1>Nouvelle demande de contact</h1>
+<% semantic_form_for :email, :url => { :controller => 'content', :action => 'send_mail' } do |f| %>
+     <% f.inputs do %>
+          <%= f.input :nom %>
+        <%= f.input :email %>
+        <%= f.input :sujet %>
+        <%= f.input :message, :as => :text %>
+      <% end %>
+    <%= submit_tag "Envoyer"%>
 <% end %>
+</div>

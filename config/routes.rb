@@ -35,6 +35,6 @@ Communautaire::Application.routes.draw do
   match '/content/contact', :to => 'content#contact', :as => 'contact'
   match '/content/send_mail', :to => 'content#send_mail'
 
-  root :to => 'pages#home'
+  root :to => 'articles#index'
 
 end

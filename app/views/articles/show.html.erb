@@ -1,10 +1,7 @@
-<h2><%= @article.title %></h2>
+<h1><%= @article.title %></h1>
 
 <p><%= @article.content %></p>
 	
 <p class="infopost">
-	<a href="">R&eacute;agir sur le forum</a><br />
-	<a href="/categories/<%= @article.category.id %>"><%= @article.category.name %></a>
-	de :  <%= @article.user.last_name %> le : <%= @article.created_at %>
-  <a href="<%=@article.id %>/edit"><%= @editarticle %></a>
+	<span>de :  <%= @article.user.last_name %>  <%= @article.user.first_name %> le : <%= @article.created_at %> </span>
 </p>
