@@ -5,3 +5,5 @@
 <p class="infopost">
 	<span>de :  <%= @article.user.last_name %>  <%= @article.user.first_name %> le : <%= @article.created_at %> </span>
 </p>
+
+<%= link_to "Modifier cet article", edit_article_path(@article.id), :class => 'button' %>

@@ -1,25 +1,17 @@
-<h2>Edition d'un article du site</h2>
+<h1>Edition d'un article du site</h1>
 
 
 
-<%= form_for(@article) do |f| %>
+<%= semantic_form_for(@article) do |f| %>
     
-    <div class="field">
-      <%= f.label :titre %>      <%= f.text_field :title %>
-    </div>
-    
-    <div class="field">
-      <%= f.label :content %><br />
-      <%= f.text_field :content %>
-    </div>
-     <div class="field">
+    <% f.inputs do %>
+        <%= f.input :title, :as => :string %>
+        <%= f.input :content, :as => :text %>
+        <%= f.input :category, :as => :select, :collection => Category.all.collect { |c| [ c.name, c.id ] } %>
+    <% end %>
 
-       <%= f.label :categorie %>
-    <%= select("category", 'id', Category.all.collect { |c| [ c.name, c.id ] }, { :include_blank => true }) %>
-
-    </div>
     
     <div class="actions">
-      <%= f.submit "Edit" %>
+      <%= f.submit "Editer l'article" %>
     </div>
 <% end %>
