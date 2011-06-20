@@ -3,9 +3,9 @@
 <%= semantic_form_for(@article) do |f| %>
 
     <% f.inputs do %>
-        <%= f.input :title, :as => :string %>
-        <%= f.input :content, :as => :text %>
-        <%= f.input :category, :as => :select, :collection => Category.all.collect { |c| [ c.name, c.id ] } %>
+        <%= f.input :title, :as => :string, :label => "Titre" %>
+        <%= f.input :content, :as => :text, :label => "Contenu" %>
+        <%= f.input :category, :as => :select, :collection => Category.all.collect { |c| [ c.name, c.id ] }, :label => "Catégorie" %>
     <% end %>
 
 

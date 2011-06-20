@@ -3,6 +3,8 @@ class AuthorizationController < ApplicationController
   load_and_authorize_resource
 
   rescue_from CanCan::AccessDenied do |exception|
-    redirect_to :root, :alert => exception.message
+
+    flash[:alert] = "Vous n'avez pas l'autorisation pour visualiser cette page."
+    redirect_to root_url
   end
 end

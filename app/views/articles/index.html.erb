@@ -3,21 +3,24 @@
 <% end %>
 
 <h1>Articles</h1>
-
-<p class="actionize"><a href="articles/new"  style="margin-left:0;">Ajouter un article</a></p>
-
+<% unless current_user.nil? %>
+    <p class="actionize"><a href="articles/new"  style="margin-left:0;">Ajouter un article</a></p>
+<% end %>
 
 <% @articles.each do |article| %>
 
     <h3><a href="<%= url_for article_path(article.id) %>"><%= article.title %></a></h3>
-    
-    <p class="soustitre"><%= article.content %></p>
-	
-	<p class="infopost">
-	
-		<%= link_to "Voir l'article complet", article_path(article.id), :class => 'button' %>
 
-		<span>de :  <%= article.user.last_name %> <%= article.user.first_name %> le : <%= article.created_at %> </span>
-	</p>
-    
+    <p class="soustitre"><%= article.content %></p>
+
+    <p class="infopost">
+
+      <%= link_to "Voir l'article complet", article_path(article.id), :class => 'button' %>
+      <% unless current_user.nil? %>
+          <%= link_to "Editer l'article", edit_article_path(article.id), :class => 'button' %>
+      <% end %>
+
+      <span>de :  <%= article.user.last_name %> <%= article.user.first_name %> le : <%= article.created_at %> </span>
+    </p>
+
 <% end %>
